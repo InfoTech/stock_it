@@ -1,11 +1,10 @@
-<br />
+<%= form_tag images_path, method: :get, remote: true do %>
+  <%= text_field_tag :search, params[:search], placeholder: 'Seach', id: 'search_images' %>
+<% end %>
+
 <div class="clearfix"></div>
-<% @images.in_groups_of(4, false).each do |group| %>
-  <div class="row"> 
-    <% group.each do |image| %>
-      <div class="col-md-3">
-        <%= image_tag image.attachment.expiring_url(3600, :thumb) %>
-      </div>
-    <% end %>
-  </div>
-<% end  %>
+
+<div id="image_list">
+  <%= render 'images/image_list', images: @images %>
+</div>
+

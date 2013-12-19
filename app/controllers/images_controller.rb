@@ -1,6 +1,11 @@
 class ImagesController < ApplicationController
   def index
-    @images = Image.all
+    if params[:seach]
+      @images = Image.tagged_with_any(params[:search].split(' '))
+    else
+      @images = Image.all
+    end
+    @images = @images.paginate(page: params[:page])
   end
 
   def new
