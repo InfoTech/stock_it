@@ -1,6 +1,5 @@
 class ImagesController < ApplicationController
   def index
-    byebug
     if params[:search]
       @images = Image.tagged_with_any(params[:search].split(' '))
     else
