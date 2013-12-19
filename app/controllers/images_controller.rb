@@ -1,6 +1,6 @@
 class ImagesController < ApplicationController
   def index
-    if params[:search]
+    if params[:search].present?
       @images = Image.tagged_with_any(params[:search].split(' '))
     else
       @images = Image.all
