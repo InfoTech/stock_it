@@ -18,4 +18,10 @@ class ImagesController < ApplicationController
 
     redirect_to root_path
   end
+
+  def show
+    @image = Image.find(params[:id])
+
+    render layout: false
+  end
 end

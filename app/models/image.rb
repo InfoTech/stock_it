@@ -14,6 +14,7 @@ class Image
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     },
     s3_permissions: :private,
+    s3_headers: { 'Content-Disposition' => 'attachment' },
     :styles => {
       :thumb => "300x300>"
     }
