@@ -8,7 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+  <div id="header">
+  	<div class="innerWrap">
+  	<%= image_tag "stockIT_logo.svg"%>
+	<%= link_to "New Image", new_image_path, class: "btn btn-primary pull-right" %>
+    </div>
+  </div>
   <div class="container">
+  
     <%= yield %>
   </div>
 </body>
