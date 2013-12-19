@@ -1,0 +1,11 @@
+<%= link_to "New Image", new_image_path, class: "btn btn-primary pull-right" %><br />
+<div class="clearfix"></div>
+<% @images.in_groups_of(4, false).each do |group| %>
+  <div class="row"> 
+    <% group.each do |image| %>
+      <div class="col-md-3">
+        <%= image_tag image.attachment.expiring_url(3600, :thumb) %>
+      </div>
+    <% end %>
+  </div>
+<% end  %>
