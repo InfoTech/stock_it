@@ -10,6 +10,7 @@ class Image
     :storage        => :s3,
     :s3_credentials => File.join(Rails.root, 'config', 'aws.yml'),
     s3_permissions: :private,
+    bucket: 'dev.stockit.infotech.com',
     :styles => {
       :thumb => "300x300>"
     }
