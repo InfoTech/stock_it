@@ -10,8 +10,15 @@
 <body>
   <div id="header">
   	<div class="innerWrap">
-  	<%= image_tag "stockIT_logo.svg"%>
-	<%= link_to "New Image", new_image_path, class: "btn btn-primary pull-right" %>
+	  	<a href="/"><%= image_tag "stockIT_logo.svg"%></a>
+	  		<div class="buttons">
+	  			<div class="searchIt">
+	    	<%= form_tag images_path, method: :get, remote: true do %>
+	  <%= text_field_tag :search, params[:search], placeholder: 'Seach', id: 'search_images' %>
+	<% end %>
+	    </div>
+			<%= link_to "New Image", new_image_path, class: "btn btn-primary pull-right" %>
+	  </div>
     </div>
   </div>
   <div class="container">

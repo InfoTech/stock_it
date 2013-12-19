@@ -20,44 +20,63 @@
 			height: 120px;
 			margin: 19px 0;
 		}
-		.pull-right {
-			margin: 50px 0;
-			// background-color:  #2576B7;
-			border-width: 4px;
-		}
-		.btn {
-	    -moz-border-bottom-colors: none;
-	    -moz-border-left-colors: none;
-	    -moz-border-right-colors: none;
-	    -moz-border-top-colors: none;
-	    background-color: none;
-	    background-image: none;
-	    background-repeat: none;
-	    border-color: none;
-	    border-image: none;
-	    border-radius: 0px;
-	    border-style: solid;
-	    border-width: 4px;
-	    box-shadow: none;
-	    color: none;
-	    cursor: pointer;
-	    display: inline-block;
-	    font-size: 14px;
-	    line-height: 20px;
-	    margin-bottom: 0;
-	    padding: 4px 12px;
-	    text-align: center;
-	    text-shadow: 0 ;
-	    vertical-align: middle;
+		.buttons {
+			display: inline-block;
+			height: 40px;
+			width: 380px;
+			float: right;
+			padding-top: 30px;
+			.searchIt {
+				height: 30px;
+				width: 200px;
+				padding-top: 50px;
+				display: inline-block;
+				select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+					border-radius: 0px;
 
-		}
-		.btn-primary {
-		    background-color: none;
-		    background-image: none;
-		    background-repeat: none;
-		    border-color: #FFFFFF;
-		    color: #FFFFFF;
-		    text-shadow:none;
+				}
+			}
+			.pull-right {
+				margin: 0px 0;
+				// background-color:  #2576B7;
+				border-width: 4px;
+				border-radius: 0px;
+			}
+			.btn {
+		    -moz-border-bottom-colors: none;
+		    -moz-border-left-colors: none;
+		    -moz-border-right-colors: none;
+		    -moz-border-top-colors: none;
+		    background-color: none;
+		    background-image: none;
+		    background-repeat: none;
+		    border-color: none;
+		    border-image: none;
+		    border-radius: none;
+		    border-style: solid;
+		    border-width: 0px;
+		    box-shadow: none;
+		    color: none;
+		    cursor: pointer;
+		    display: inline-block;
+		    font-size: 14px;
+		    line-height: 20px;
+		    margin-bottom: 0;
+		    padding: 4px 12px;
+		    text-align: center;
+		    text-shadow: 0 ;
+		    vertical-align: middle;
+
+			}
+			.btn-primary {
+			    background-color: none;
+			    background-image: none;
+			    background-repeat: none;
+			    border-color: #FFFFFF;
+			    color: #FFFFFF;
+			    text-shadow:none;
+			    margin-top: 45px;
+			}
 		}
 	}
 }
