@@ -1,6 +1,6 @@
 class ImagesController < ApplicationController
   def index
-    if params[:seach]
+    if params[:search].present?
       @images = Image.tagged_with_any(params[:search].split(' '))
     else
       @images = Image.all
@@ -17,5 +17,11 @@ class ImagesController < ApplicationController
     @image.save
 
     redirect_to root_path
+  end
+
+  def show
+    @image = Image.find(params[:id])
+
+    render layout: false
   end
 end
