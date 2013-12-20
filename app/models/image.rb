@@ -16,6 +16,6 @@ class Image
     s3_permissions: :private,
     s3_headers: { 'Content-Disposition' => 'attachment' },
     :styles => {
-      :thumb => "300x300>"
+      :thumb => "300x300#"
     }
 end
