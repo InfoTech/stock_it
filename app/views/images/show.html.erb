@@ -2,7 +2,7 @@
   <div class="span3">
     <%= image_tag @image.attachment.expiring_url(3600, :thumb) %>
   </div>
-  <div class="span3">
+  <div class="span7">
     <div class="image_details" data-id="<%= @image.id %>">
       <%= render 'show', image: @image %>
     </div>
