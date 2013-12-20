@@ -1,0 +1,11 @@
+<%= form_for image, remote: true do |f| %>
+  <%= f.label :thinkstock_id, "Thinkstock ID" %>
+  <%= f.text_field :thinkstock_id %>
+  <%= f.label :tags %>
+  <%= f.text_field :tags, class: "span6" %><br />
+  <%= hidden_field_tag :untagged, true if defined?(untagged) && untagged %>
+
+  <%= f.submit class: "btn btn-primary" %>
+  <%= link_to 'Delete', image_path(image), method: :delete, class: "btn btn-danger pull-right", remote: true %>
+  <div class="clearfix"></div>
+<% end %>

@@ -1,0 +1,1 @@
+$(".image_row[data-id='<%= @image.id %>']").fadeOut()

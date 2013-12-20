@@ -26,6 +26,7 @@ gem "mongoid-paperclip", :require => "mongoid_paperclip"
 gem 'aws-sdk', '~> 1.3.4'
 gem 'mongoid_taggable'
 gem "will_paginate_mongoid"
+gem 'dropzonejs-rails'
 
 group :development, :test do
   gem 'byebug'

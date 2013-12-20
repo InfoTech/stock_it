@@ -7,3 +7,9 @@ $ ->
     )
     return false
   )
+
+  Dropzone.options.imagesDropzone = {
+    paramName: "image[attachment]",
+    complete: (file) ->
+      $("#edit_untagged_images").show()
+  };

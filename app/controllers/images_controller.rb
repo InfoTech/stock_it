@@ -5,6 +5,11 @@ class ImagesController < ApplicationController
     else
       @images = Image.all
     end
+
+    if params[:untagged]
+      @images = @images.where(tags_array: [])
+    end
+
     @images = @images.paginate(page: params[:page])
   end
 
@@ -16,12 +21,30 @@ class ImagesController < ApplicationController
     @image = Image.new(params[:image])
     @image.save
 
-    redirect_to root_path
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.json { render json: {id: @image.id, filename: @image.attachment_file_name}.to_json }
+    end
   end
 
   def show
     @image = Image.find(params[:id])
 
     render layout: false
+  end
+
+  def edit
+    @image = Image.find(params[:id])
+  end
+
+  def update
+    @image = Image.find(params[:id])
+
+    @image.update_attributes(params[:image])
+  end
+
+  def destroy
+    @image = Image.find(params[:id])
+    @image.destroy
   end
 end

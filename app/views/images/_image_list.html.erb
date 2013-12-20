@@ -1,11 +1,26 @@
-<% images.in_groups_of(4, false).each do |group| %>
-  <div class="row"> 
-    <% group.each do |image| %>
+<% if params[:untagged] %>
+  <% images.each do |image| %>
+    <div class="row image_row" data-id="<%= image.id %>">
       <div class="span3">
-        <%= link_to image_url(image), data: { toggle: "modal", target: "#imageModal", name: image.attachment_file_name }, class: "image_link" do %>
-          <%= image_tag image.attachment.expiring_url(3600, :thumb) %>
-        <% end %>
+        <%= image_tag image.attachment.expiring_url(3600, :thumb) %>
       </div>
-    <% end %>
-  </div>
+      <div class="span6">
+        <%= render 'form', image: image, untagged: true %>
+      </div>
+    </div>
+    <br />
+  <% end %>
+<% else %>
+  <% images.in_groups_of(4, false).each do |group| %>
+    <div class="row"> 
+      <% group.each do |image| %>
+        <div class="span3">
+          <%= link_to image_url(image), data: { toggle: "modal", target: "#imageModal", name: image.attachment_file_name }, class: "image_link" do %>
+            <%= image_tag image.attachment.expiring_url(3600, :thumb) %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <br />
+  <% end %>
 <% end %>

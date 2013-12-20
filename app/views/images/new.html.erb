@@ -1,9 +1,6 @@
 <h1>New Image</h1>
-<%= form_for @image, html: { multipart: true, role: "form" } do |f| %>
-  <%= f.label :thinkstock_id, "Thinkstock Id" %>
-  <%= f.text_field :thinkstock_id, class: "form-control" %>
-  <%= f.label :tags %>
-  <%= f.text_field :tags, class: "form-control" %><br />
-  <%= f.file_field :attachment %><br />
-  <%= f.submit class: "btn btn-primary" %>
+
+<%= form_tag images_path, class: "dropzone", id: "images-dropzone" do %>
 <% end %>
+
+<%= link_to "Edit Images", root_path(untagged: true), id: "edit_untagged_images", class: "btn btn-primary hide" %>

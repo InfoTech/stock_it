@@ -1,0 +1,1 @@
+$(".image_details[data-id='<%= @image.id %>']").html("<%= j render('form', image: @image) %>")
