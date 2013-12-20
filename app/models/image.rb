@@ -18,4 +18,9 @@ class Image
     :styles => {
       :thumb => "300x300#"
     }
+
+    def dimensions
+      geometry = Paperclip::Geometry.from_file(self.attachment.expiring_url)
+      "#{geometry.width.to_i} x #{geometry.height.to_i}"
+    end
 end
