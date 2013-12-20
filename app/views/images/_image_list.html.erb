@@ -1,3 +1,5 @@
+<%= will_paginate images %>
+
 <% if params[:untagged] %>
   <% images.each do |image| %>
     <div class="row image_row" data-id="<%= image.id %>">

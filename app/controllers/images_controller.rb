@@ -10,7 +10,7 @@ class ImagesController < ApplicationController
       @images = @images.where(tags_array: [])
     end
 
-    @images = @images.paginate(page: params[:page])
+    @images = @images.paginate(page: params[:page], per_page: 16)
   end
 
   def new
